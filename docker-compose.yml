@@ -48,7 +48,7 @@ services:
     ports:
       - "3307:3306"
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:5.2.2
     container_name: phpmyadmin
     environment:
       PMA_HOST: mysql
