@@ -27,11 +27,11 @@ Este proyecto es una base modular para backend desarrollada con **Laravel** y **
 
 ## 🐳 Dockerización
 
-El proyecto está completamente **dockerizado**, lo que permite levantar todo el entorno con un solo comando, asegurando la misma configuración en todos los entornos.
+El proyecto está completamente **dockerizado**, lo que permite levantar todo el entorno con unos pocos comandos, asegurando la misma configuración en todos los entornos.
 
 El archivo `docker-compose.yml` incluye los siguientes contenedores:
 
-- 🟢 **Backend Laravel**: servidor PHP con Laravel + JWT  
+- 🟢 **Backend Laravel**: servidor PHP con Laravel
 - 🔄 **Laravel Reverb**: WebSocket server para broadcasting en tiempo real  
 - 🟣 **MySQL**: motor de base de datos relacional  
 - 🟠 **phpMyAdmin**: panel de administración visual de base de datos  
