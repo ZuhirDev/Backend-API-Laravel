@@ -1,0 +1,67 @@
+services:
+  backend:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    container_name: laravel
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - backend-network
+  reverb:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    container_name: reverb
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - backend-network
+    command: ["php", "artisan", "reverb:start"]  
+    depends_on:
+      - backend  
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "85:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./public:/var/www/html/public
+    depends_on:
+      - backend
+      - reverb
+    networks:
+      - backend-network
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - backend-network
+    ports:
+      - "3307:3306"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2.2
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - backend-network
+networks: 
+  backend-network:
+    driver: bridge
+volumes:
+  db_data:
+    driver: local

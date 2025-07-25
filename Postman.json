@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "7d8af521-edc8-42e9-9e79-9992c4c1f4b6",
+		"name": "Backend-API-Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46873451",
+		"_collection_link": "https://zuhirdev-141377.postman.co/workspace/ZuhirDev's-Workspace~4577b0ce-b4cd-4473-8128-be850c868796/collection/46873451-7d8af521-edc8-42e9-9e79-9992c4c1f4b6?action=share&source=collection_link&creator=46873451"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"name\": \"Admin\",    \n    \"email\": \"admin@admin.es\",\n    \"password\": \"11111111\",\n    \"password_confirmation\": \"11111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{base_url}}/api/register",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"email\": \"admin@admin.es\",\n    \"password\": \"11111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{base_url}}/api/login",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{base_url}}/api/logout",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "es",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{base_url}}/api/me",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "es",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Administrador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{base_url}}/api/update",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "es",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"current_password\": \"11111111\",\n    \"password\": \"55555555\",\n    \"password_confirmation\": \"55555555\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{base_url}}/api/update-password",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SendResetLinkPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "es",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  \"email\": \"admin@admin.es\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{base_url}}/api/forgot-password",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResetPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  \"email\": \"admin@admin.es\",\n  \"password\": \"11111111\",\n  \"password_confirmation\": \"11111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:85/api/password-reset?token=f04f3061a9d33fb082fcdc88a01ee49bee314eaf29e4f2cceea5813c216915a9&email=admin%40admin.es",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "85",
+							"path": [
+								"api",
+								"password-reset"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "f04f3061a9d33fb082fcdc88a01ee49bee314eaf29e4f2cceea5813c216915a9"
+								},
+								{
+									"key": "email",
+									"value": "admin%40admin.es"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SendVerifyEmail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{base_url}}/api/send-verify-email",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"send-verify-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:85/api/verify-email?expires=1753461652&hash=c5a5755f54ef20da49769341de609295dc38c7a2&id=1&signature=bb1b89c2dbf0814abc0282c31fdbcf9ceb52fa820725b42522e239a6f221ad0b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "85",
+							"path": [
+								"api",
+								"verify-email"
+							],
+							"query": [
+								{
+									"key": "expires",
+									"value": "1753461652"
+								},
+								{
+									"key": "hash",
+									"value": "c5a5755f54ef20da49769341de609295dc38c7a2"
+								},
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "signature",
+									"value": "bb1b89c2dbf0814abc0282c31fdbcf9ceb52fa820725b42522e239a6f221ad0b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enable2FA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "es",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"11111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{base_url}}/api/2fa/enable",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"2fa",
+								"enable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify2FA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"one_time_password\": \"072992\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{base_url}}/api/2fa/verify",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"2fa",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable2FA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"11111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{base_url}}/api/2fa/disable",
+							"protocol": "http",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"2fa",
+								"disable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
