@@ -80,7 +80,7 @@
       </div>
       <div class="footer">
         <p>Regards,</p>
-        <p>The Weft Team</p>
+        <p>{{ config('app.name') }} Team</p>
       </div>
     </div>
   </div>
